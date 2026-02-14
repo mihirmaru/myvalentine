@@ -1,0 +1,53 @@
+<html>
+<body style="    display: flex;">
+<audio id="myAudio" autoplay muted loop>
+  <!-- <source src="horse.ogg" type="audio/ogg"> -->
+  <source src="song.mp3" type="audio/mp3">
+  Your browser does not support the audio tag.
+</audio>
+
+<div style="
+    margin: auto;
+    padding: 10px;
+" id='validateform'>
+Please enter password: 
+<input id="pin" type="password"/>
+<button onclick="validate()" >Access</button>
+</div>
+
+<button onclick="unmuteAudio()" id="btn" style="
+    margin: auto;
+    padding: 10px;
+    border: unset;
+    border-radius: 18px;
+    background: #ffa4a4;
+	cursor: pointer;
+	display: none;
+">Let's Start with your smile ... </button>
+
+<script>
+  function unmuteAudio() {
+    var audio = document.getElementById('myAudio');
+    if (audio.muted) {
+	audio.play();
+      audio.muted = false;
+    }
+	
+	window.open(window.location.origin + '/myvalentine/untouch/index.html', '_blank'); 
+  }
+  
+  function validate() {
+	var val = document.getElementById("pin");
+	if (val && val.value && val.value == 'Mini@2127') {
+		document.getElementById("validateform").style.display = "none";
+		document.getElementById("btn").style.display = "block";
+	}
+  }
+  
+
+<!-- document.addEventListener("click", () => { -->
+<!-- unmuteAudio(); -->
+<!-- }) -->
+</script>
+</body>
+</html>
